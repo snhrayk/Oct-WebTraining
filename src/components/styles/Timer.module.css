@@ -1,0 +1,52 @@
+.cup {
+  width: 36rem;
+  height: 60rem;
+  border: 1px solid #b9b8b7;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  padding-bottom: 0.8rem;
+  position: relative;
+}
+.juice {
+  width: 34rem;
+  height: 52rem;
+  border: 1px solid #b9b8b7;
+  background-color: #f27a2f;
+  border-radius: 6px;
+}
+.timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timer > h2 {
+  line-height: 6rem;
+  font-size: 8.8em;
+  color: #f6f5f4;
+}
+
+.timer > button {
+  display: inline-block;
+  padding: 0.4rem 1.6rem;
+  border-radius: 6px;
+  border: none;
+  background-color: #f6f5f4;
+  font-size: 3.2rem;
+  font-weight: bolder;
+  color: #f27a2f;
+  border: 1px solid tomato;
+}
+
+.straw {
+  width: 4rem;
+  height: 90vh;
+  border-left: 1px solid #b9b8b7;
+  border-right: 1px solid #b9b8b7;
+  position: absolute;
+  bottom: 0;
+  right: 16%;
+  z-index: -100;
+}
