@@ -1,7 +1,14 @@
+:root {
+  --main: #f27a2f;
+  --base: #f6f5f4;
+  --gray: #b9b8b7;
+}
+
+/* コップ */
 .cup {
   width: 36rem;
   height: 60rem;
-  border: 1px solid #b9b8b7;
+  border: 1px solid var(--gray);
   border-radius: 6px;
   display: flex;
   justify-content: center;
@@ -9,44 +16,79 @@
   padding-bottom: 0.8rem;
   position: relative;
 }
+
+/* ジュース */
 .juice {
-  width: 34rem;
-  height: 52rem;
-  border: 1px solid #b9b8b7;
-  background-color: #f27a2f;
-  border-radius: 6px;
+  width: calc(36rem - 2.4rem);
+  /* height: 52rem; */
+  background: linear-gradient(180deg, var(--main) 0%, #f26c18 100%);
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  transition: height 1s ease;
 }
+
+/* ジュースの中のタイマー部分 */
 .timer {
+  width: inherit;
   display: flex;
   flex-direction: column;
   align-items: center;
+  row-gap: 3.2rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .timer > h2 {
-  line-height: 6rem;
-  font-size: 8.8em;
-  color: #f6f5f4;
+  font-size: 8.8rem;
+  line-height: 7.2rem;
+  color: var(--base);
 }
 
-.timer > button {
-  display: inline-block;
+.startBtn {
   padding: 0.4rem 1.6rem;
-  border-radius: 6px;
-  border: none;
-  background-color: #f6f5f4;
-  font-size: 3.2rem;
+  display: inline-block;
+  border-radius: 24px;
+  background-color: var(--base);
+  font-size: 2.4rem;
   font-weight: bolder;
-  color: #f27a2f;
-  border: 1px solid tomato;
+  color: var(--main);
+  border: none;
 }
 
+/* STARTボタン押した後 */
+.btnWrap {
+  width: inherit;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.btnWrap > button {
+  padding: 0rem 3.2rem;
+  border-radius: 24px;
+}
+
+.resetBtn {
+  border: 2px solid var(--base);
+}
+
+.pauseBtn {
+  background-color: var(--base);
+}
+
+.playBtn {
+  background-color: var(--base);
+}
+
+/* ストロー部分 */
 .straw {
   width: 4rem;
   height: 90vh;
-  border-left: 1px solid #b9b8b7;
-  border-right: 1px solid #b9b8b7;
+  border-left: 1px solid var(--gray);
+  border-right: 1px solid var(--gray);
   position: absolute;
   bottom: 0;
   right: 16%;
   z-index: -100;
+  margin-bottom: 0.8rem;
 }

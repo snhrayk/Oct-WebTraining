@@ -12,8 +12,10 @@ header {
   height: 8vh;
   display: flex;
   justify-content: center;
+  align-items: end;
   /* border-bottom: 1px solid tomato; */
 }
+
 h1 {
   color: #f27a2f;
   font-size: 2.4rem;
