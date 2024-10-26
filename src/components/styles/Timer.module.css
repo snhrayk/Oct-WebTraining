@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap");
 :root {
   --main: #f27a2f;
   --base: #f6f5f4;
@@ -27,6 +28,27 @@
   transition: height 1s ease;
 }
 
+/* ジュースの波 */
+.wave {
+  transform: translateY(-75%);
+}
+.waveBack {
+  opacity: 0.8;
+  animation: wave 1s ease-in-out infinite alternate;
+}
+.waveFront {
+  opacity: 1;
+  animation: wave 1s linear infinite alternate-reverse;
+}
+@keyframes wave {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100vw);
+  }
+}
+
 /* ジュースの中のタイマー部分 */
 .timer {
   width: inherit;
@@ -37,12 +59,16 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  z-index: 100;
 }
 
 .timer > h2 {
-  font-size: 8.8rem;
+  font-size: 9.6rem;
   line-height: 7.2rem;
   color: var(--base);
+  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+  font-family: Nunito;
+  font-weight: 800;
 }
 
 .startBtn {
@@ -66,18 +92,31 @@
 .btnWrap > button {
   padding: 0rem 3.2rem;
   border-radius: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .resetBtn {
-  border: 2px solid var(--base);
-}
-
-.pauseBtn {
   background-color: var(--base);
+  border: 1px solid var(--main);
 }
 
+.pauseBtn,
 .playBtn {
-  background-color: var(--base);
+  background-color: var(--main);
+  border: 1px solid var(--base);
+}
+
+.restartBtn {
+  padding: 0.4rem 1.6rem;
+  display: inline-block;
+  border-radius: 24px;
+  font-size: 2.4rem;
+  font-weight: bolder;
+  border: none;
+  color: var(--base);
+  background-color: var(--main);
 }
 
 /* ストロー部分 */
@@ -91,4 +130,6 @@
   right: 16%;
   z-index: -100;
   margin-bottom: 0.8rem;
+  opacity: 0.5;
+  background: linear-gradient(180deg, var(--main) 0%, #f26c18 100%);
 }
