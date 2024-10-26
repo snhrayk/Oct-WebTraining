@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <header>
-        <h1>Juice timer</h1>
+        <h1>Juice Timer</h1>
       </header>
       <main>
         <Timer />
